@@ -1,0 +1,61 @@
+{
+    "package_version": 2,
+    "version": "1.0.0",
+    "name": "snapshot",
+    "description": "i18n:snapshot.description",
+    "main": "./dist/main.js",
+    "dependencies": {
+        "axios": "^1.4.0",
+        "fs-extra": "^10.0.0",
+        "vue": "^3.1.4"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^9.0.5",
+        "@types/node": "^16.0.1",
+        "typescript": "^4.3.4"
+    },
+    "panels": {
+        "default": {
+            "title": "i18n:snapshot.title",
+            "type": "dockable",
+            "main": "dist/panels/default",
+            "icon": "./static/images/icon.png",
+            "size": {
+                "min-width": 400,
+                "min-height": 220,
+                "width": 650,
+                "height": 260
+            }
+        }
+    },
+    "contributions": {
+        "menu": [
+            {
+                "path": "i18n:menu.extension",
+                "label": "i18n:snapshot.title",
+                "icon": "./static/images/icon.png",
+                "message": "open-panel"
+            }
+        ],
+        "messages": {
+            "open-panel": {
+                "methods": [
+                    "openPanel"
+                ]
+            }
+        },
+        "shortcuts": [
+            {
+                "message": "open-panel",
+                "win": "ctrl+shift+s",
+                "mac": "cmd+shift+s"
+            }
+        ]
+    },
+    "author": "la_vie",
+    "editor": ">=3.5.0",
+    "scripts": {
+        "build": "tsc -b",
+        "watch": "tsc -w"
+    }
+}
